@@ -46,6 +46,7 @@ const App = () => {
       setVotes(copy)
       updateVote(copy[selected])
       console.log(copy, selected)
+      
   }
 
   return (
