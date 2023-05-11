@@ -8,12 +8,10 @@ const Button = (props) =>(
   </button>
 )
 
-const Display = (props) => <>
-  <p>{props.selected}</p><p>has {props.votes} votes</p>
-</>
+const Display = (props) => <><p>{props.selected}</p><p>has {props.votes} votes</p></>
 
 const MostVotes = ({anecdotes, votes}) => {
-  console.log(votes, "idk")
+  console.log(votes)
   const indexOfMaxValue = votes.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0);
   return (<p>{anecdotes[indexOfMaxValue]}</p>)
 }
@@ -39,8 +37,7 @@ const App = () => {
   const handleNextAnecdote = () => {
     const rand = getRandomInt()
     setSelected(rand)
-    updateVote(votes[rand])
-    console.log(votes, selected, "hi", rand)
+    console.log(votes, selected, rand)
   }
 
   const handleVote = () => {
